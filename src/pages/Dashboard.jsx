@@ -19,7 +19,7 @@ import {
   ExclamationTriangleIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
-import { getClientById, getClientSector } from "";
+import { getClientById, getClientSector } from "../Data/IndustrialData";
 
 function createLivePoint(sector) {
   const baseRisk = Number.parseInt(sector.aiPrediction.probability, 10);

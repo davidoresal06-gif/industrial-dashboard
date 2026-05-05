@@ -11,7 +11,7 @@ import {
   TruckIcon,
 } from "@heroicons/react/24/outline";
 import ClientSelector from "../components/ClientSelector";
-import { clients, getClientById, getClientSector, getRecommendedPlan, sectors } from "";
+import { clients, getClientById, getClientSector, getRecommendedPlan, sectors } from "../Data/IndustrialData";
 
 const icons = {
   energia: BoltIcon,
