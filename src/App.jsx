@@ -10,7 +10,7 @@ import ROIPages from "./pages/ROIPages";
 import ProposalPage from "./pages/ProposalPage";
 import AdminPage from "./pages/AdminPage";
 import Sidebar from "./components/Sidebar";
-import { canAccess, getDefaultPathForUser } from "./data/industrialData";
+import { canAccess, getDefaultPathForUser } from "./Data/IndustrialData";
 import "./styles/dashboard.css";
 
 const MainLayout = ({ children, user, clientId, onClientChange }) => (
