@@ -7,6 +7,14 @@ export const rolePermissions = {
 
 export const users = [
   {
+    email: "admin@industrial.com",
+    password: "admin123",
+    name: "Administrador Industrial",
+    role: "Director",
+    roleId: "director",
+    title: "Cuenta demo comercial",
+  },
+  {
     email: "admin@indusvue.com",
     password: "IndusVue2026!",
     name: "Elian David",
@@ -323,23 +331,23 @@ export const sectors = [
 
 export const pricingPlans = [
   {
-    name: "Starter Plant",
-    price: "$2,900",
-    scope: "1 planta / 25 activos",
-    features: ["Dashboard ejecutivo", "Alertas por correo", "Reporte mensual ROI", "Historico 90 dias"],
+    name: "Basico",
+    price: "$3,999 MXN",
+    scope: "Dashboard inicial para una operacion",
+    features: ["Dashboard industrial", "Login incluido", "Metricas simuladas", "Vista responsive"],
   },
   {
-    name: "Enterprise Ops",
-    price: "$7,900",
-    scope: "Multi-area / 150 activos",
-    features: ["IA predictiva", "API industrial", "Soporte 24/7", "Integracion SCADA/PLC", "Roles por usuario"],
+    name: "Profesional",
+    price: "$7,999 MXN",
+    scope: "Sistema personalizado para operacion real",
+    features: ["Personalizacion visual", "Usuarios y roles", "Reportes PDF", "Alertas inteligentes", "Panel por sector"],
     featured: true,
   },
   {
-    name: "Mission Critical",
-    price: "A medida",
-    scope: "Operaciones reguladas y 24/7",
-    features: ["SLA dedicado", "Alta disponibilidad", "Ciberseguridad OT", "Data lake industrial", "Comite mensual"],
+    name: "Empresarial",
+    price: "Cotizacion",
+    scope: "Backend real e integraciones industriales",
+    features: ["Node.js + Express", "Base de datos", "Sensores/API", "Integracion SCADA/ERP", "Soporte e implementacion"],
   },
 ];
 
@@ -373,7 +381,39 @@ export const businessProof = [
   { value: "30%", label: "menos fallas no programadas" },
   { value: "4.6 meses", label: "recuperacion promedio" },
   { value: "24/7", label: "alertamiento operativo" },
-  { value: "$1.29M", label: "ahorro anual potencial" },
+  { value: "1 panel", label: "control operativo centralizado" },
+];
+
+export const useCaseCards = [
+  {
+    title: "Generacion electrica",
+    problem: "Evita paros por temperatura, vibracion o sobrecarga en turbinas y generadores.",
+  },
+  {
+    title: "Manufactura",
+    problem: "Monitorea OEE, consumo, scrap y fallas en prensas, robots o lineas CNC.",
+  },
+  {
+    title: "Logistica",
+    problem: "Detecta saturacion de andenes, baja disponibilidad de montacargas y riesgo SLA.",
+  },
+  {
+    title: "Mantenimiento industrial",
+    problem: "Prioriza ordenes por riesgo, impacto financiero y condicion real del activo.",
+  },
+  {
+    title: "Control de produccion",
+    problem: "Centraliza rendimiento, alertas y metricas para tomar decisiones en tiempo real.",
+  },
+];
+
+export const smartAlerts = [
+  { type: "stable", title: "Operacion estable", detail: "Todos los activos dentro de rango seguro.", color: "verde" },
+  { type: "warning", title: "Temperatura alta", detail: "Motor 03 excedio temperatura segura.", color: "amarillo" },
+  { type: "warning", title: "Consumo elevado", detail: "Linea B consume 14% mas energia que el promedio.", color: "amarillo" },
+  { type: "warning", title: "Mantenimiento pendiente", detail: "Bomba PMP-04 requiere inspeccion en 72 horas.", color: "amarillo" },
+  { type: "critical", title: "Falla detectada", detail: "Riesgo critico por vibracion anormal en activo principal.", color: "rojo" },
+  { type: "critical", title: "Produccion baja", detail: "Rendimiento bajo el umbral operativo durante el ultimo ciclo.", color: "rojo" },
 ];
 
 export const testimonials = [

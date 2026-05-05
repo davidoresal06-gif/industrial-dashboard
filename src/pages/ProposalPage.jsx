@@ -98,7 +98,7 @@ export default function ProposalPage({ clientId, user }) {
           <h2>Precio y ROI</h2>
           <dl className="ai-list">
             <div><dt>Plan recomendado</dt><dd>{plan.name}</dd></div>
-            <div><dt>Precio</dt><dd>{sector.price}</dd></div>
+            <div><dt>Precio</dt><dd>{plan.price}</dd></div>
             <div><dt>Ahorro anual</dt><dd>{savings.value}</dd></div>
             <div><dt>ROI</dt><dd>{sector.roi}</dd></div>
             <div><dt>Payback</dt><dd>{sector.payback}</dd></div>

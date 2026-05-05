@@ -52,7 +52,7 @@ export default function ROIPages({ clientId }) {
           <div>
             <h3>Plan recomendado</h3>
             <strong>{recommendedPlan.name}</strong>
-            <span>{sector.price}</span>
+            <span>{recommendedPlan.price}</span>
           </div>
         </article>
       </section>

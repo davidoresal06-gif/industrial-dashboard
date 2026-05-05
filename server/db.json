@@ -1,6 +1,15 @@
 {
   "users": [
     {
+      "id": "usr_industrial_admin",
+      "email": "admin@industrial.com",
+      "password": "admin123",
+      "name": "Administrador Industrial",
+      "role": "Director",
+      "roleId": "director",
+      "title": "Cuenta demo comercial"
+    },
+    {
       "id": "usr_admin",
       "email": "admin@indusvue.com",
       "password": "IndusVue2026!",
@@ -49,6 +58,15 @@
       "severity": "warning",
       "message": "Motor principal requiere inspeccion en 342 horas",
       "createdAt": "2026-05-04T10:30:00.000Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": "rpt_demo",
+      "title": "Reporte ejecutivo demo",
+      "client": "CFE",
+      "createdAt": "2026-05-05T09:00:00.000Z",
+      "status": "guardado"
     }
   ]
 }

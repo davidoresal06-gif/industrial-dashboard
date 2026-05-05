@@ -173,11 +173,18 @@ svg {
   font-weight: 900;
 }
 
-.sales-links a {
+.sales-links a,
+.nav-link-button {
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
+}
+
+.nav-logo-button,
+.nav-link-button {
+  background: transparent;
+  border: 0;
 }
 
 .sales-hero {
@@ -1317,6 +1324,213 @@ nav a:hover {
   color: var(--muted);
 }
 
+.premium-login {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.24), transparent 28%),
+    radial-gradient(circle at 80% 70%, rgba(244, 114, 182, 0.16), transparent 28%),
+    #070a10;
+}
+
+.login-card.has-error {
+  border-color: rgba(251, 113, 133, 0.54);
+}
+
+.input-shell.input-error {
+  border-color: rgba(251, 113, 133, 0.72);
+  box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.12);
+}
+
+.login-button {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.login-button:hover {
+  box-shadow: 0 18px 42px rgba(56, 189, 248, 0.28);
+  transform: translateY(-2px);
+}
+
+.visual-error {
+  align-items: center;
+  background: rgba(251, 113, 133, 0.1);
+  border: 1px solid rgba(251, 113, 133, 0.28);
+  border-radius: 12px;
+  color: #fb7185;
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+}
+
+.demo-credential {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  display: grid;
+  gap: 5px;
+  margin-top: 22px;
+  max-width: 420px;
+  padding: 14px;
+}
+
+.demo-credential span {
+  color: var(--muted);
+}
+
+.whatsapp-float {
+  background: linear-gradient(135deg, #25d366, #d9fff0);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  bottom: 24px;
+  box-shadow: 0 22px 60px rgba(37, 211, 102, 0.28);
+  color: #062113;
+  font-weight: 900;
+  min-height: 48px;
+  padding: 14px 18px;
+  position: fixed;
+  right: 24px;
+  text-decoration: none;
+  z-index: 20;
+}
+
+.app-whatsapp {
+  bottom: 18px;
+}
+
+.header-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.clock-pill {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #dbe7f5;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+}
+
+.kpi-trend {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+.kpi-trend.up {
+  color: var(--green);
+}
+
+.kpi-trend.down {
+  color: #fb7185;
+}
+
+.status-strip {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 18px;
+}
+
+.status-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.status-card strong,
+.status-card span {
+  display: block;
+}
+
+.status-card span {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.status-card.stable {
+  background: rgba(74, 222, 128, 0.1);
+  border-color: rgba(74, 222, 128, 0.28);
+}
+
+.status-card.warning {
+  background: rgba(251, 146, 60, 0.12);
+  border-color: rgba(251, 146, 60, 0.34);
+}
+
+.status-card.critical {
+  background: rgba(251, 113, 133, 0.12);
+  border-color: rgba(251, 113, 133, 0.38);
+}
+
+.smart-alert-grid,
+.usecase-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.usecase-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.usecase-card h3 {
+  margin-top: 0;
+}
+
+.smart-alert {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.smart-alert.warning {
+  border-left-color: var(--orange);
+}
+
+.smart-alert.critical {
+  border-left-color: #fb7185;
+}
+
+.smart-alert span,
+.smart-alert small {
+  color: var(--muted);
+  display: block;
+  margin-top: 4px;
+}
+
+.about-page {
+  padding: 34px;
+}
+
+.about-hero {
+  margin: 40px auto 18px;
+  max-width: 1100px;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.4rem, 6vw, 5.6rem);
+  line-height: 0.95;
+  margin: 12px 0;
+}
+
+.about-hero p {
+  color: #cbd5e1;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.about-grid {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
 @keyframes riseIn {
   from {
     opacity: 0;
@@ -1478,5 +1692,32 @@ nav a:hover {
   .proposal-cover,
   .addon-grid {
     display: block !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .usecase-grid,
+  .status-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .usecase-grid,
+  .status-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .header-actions {
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .whatsapp-float {
+    bottom: 14px;
+    left: 18px;
+    right: 18px;
+    text-align: center;
   }
 }

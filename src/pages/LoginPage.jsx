@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { BoltIcon, LockClosedIcon, UserIcon } from "@heroicons/react/24/outline";
-import { users } from "../Data/IndustrialData";;
+import { BoltIcon, ExclamationCircleIcon, LockClosedIcon, UserIcon } from "@heroicons/react/24/outline";
+import { users } from "../Data/IndustrialData";
 
 export default function LoginPage({ onLogin }) {
-  const [email, setEmail] = useState("admin@indusvue.com");
-  const [password, setPassword] = useState("IndusVue2026!");
+  const [email, setEmail] = useState("admin@industrial.com");
+  const [password, setPassword] = useState("admin123");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -38,27 +38,31 @@ export default function LoginPage({ onLogin }) {
         return;
       }
 
-      setError("Usuario o contrasena incorrectos. Prueba con los usuarios demo.");
+      setError("Usuario o contrasena incorrectos. Selecciona un usuario demo o revisa tus datos.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <main className="login-page">
+    <main className="login-page premium-login">
       <section className="login-hero">
-        <span className="eyebrow">Enterprise industrial intelligence</span>
-        <h1>Monitoreo predictivo que se vende como solucion ejecutiva.</h1>
+        <span className="eyebrow">Portal industrial seguro</span>
+        <h1>Acceso profesional al sistema de monitoreo</h1>
         <p>
-          Demo con sectores, clientes, roles, IA predictiva, ROI, precios y propuesta comercial
-          lista para presentar.
+          Inicia sesion para ver dashboards, sectores, reportes, alertas inteligentes y simulacion de fallas.
         </p>
+        <div className="demo-credential">
+          <strong>Usuario demo: admin@industrial.com</strong>
+          <span>Contrasena: admin123</span>
+        </div>
         <div className="demo-users">
           {users.map((user) => (
             <button
               type="button"
               key={user.email}
               onClick={() => {
+                setError("");
                 setEmail(user.email);
                 setPassword(user.password);
               }}
@@ -70,7 +74,7 @@ export default function LoginPage({ onLogin }) {
         </div>
       </section>
 
-      <section className="login-card">
+      <section className={`login-card ${error ? "has-error" : ""}`}>
         <div className="login-brand">
           <BoltIcon />
           <div>
@@ -82,7 +86,7 @@ export default function LoginPage({ onLogin }) {
         <form onSubmit={handleSubmit}>
           <label>
             Correo corporativo
-            <span className="input-shell">
+            <span className={`input-shell ${error ? "input-error" : ""}`}>
               <UserIcon />
               <input
                 className="login-input"
@@ -96,7 +100,7 @@ export default function LoginPage({ onLogin }) {
 
           <label>
             Contrasena
-            <span className="input-shell">
+            <span className={`input-shell ${error ? "input-error" : ""}`}>
               <LockClosedIcon />
               <input
                 className="login-input"
@@ -108,7 +112,12 @@ export default function LoginPage({ onLogin }) {
             </span>
           </label>
 
-          {error && <p className="form-error">{error}</p>}
+          {error && (
+            <p className="form-error visual-error">
+              <ExclamationCircleIcon />
+              {error}
+            </p>
+          )}
 
           <button className="login-button" type="submit" disabled={loading}>
             {loading ? "Validando..." : "Iniciar sesion"}
@@ -116,8 +125,7 @@ export default function LoginPage({ onLogin }) {
         </form>
 
         <p className="login-footnote">
-          Roles demo: Director, Operador, Tecnico y Ventas. Cada usuario representa una vista
-          comercial distinta del producto.
+          Roles demo: Director, Operador, Tecnico y Ventas. Cada usuario representa una vista comercial distinta.
         </p>
       </section>
     </main>
