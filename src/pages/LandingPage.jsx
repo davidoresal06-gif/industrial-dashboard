@@ -8,6 +8,7 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
 import IndustrialMotion from "../components/IndustrialMotion";
+import { CONTACT_PHONE_DISPLAY, WHATSAPP_URL } from "../config/contact";
 import { businessProof, pricingPlans, sectors, testimonials, useCaseCards } from "../Data/IndustrialData";
 
 const outcomes = [
@@ -174,11 +175,23 @@ export default function LandingPage({ isAuthenticated }) {
           <span className="eyebrow">Contacto</span>
           <h2>Solicita una implementacion</h2>
           <p>Presenta IndusVue como sistema SaaS industrial con IA, roles, reportes y propuesta comercial.</p>
+          <div className="contact-proof">
+            <strong>{CONTACT_PHONE_DISPLAY}</strong>
+            <span>Canal directo para cotizacion, demo e implementacion.</span>
+          </div>
+          <div className="implementation-badges">
+            <span>Demo guiada</span>
+            <span>Propuesta ejecutiva</span>
+            <span>Implementacion por etapas</span>
+          </div>
         </div>
-        <button className="btn-primary" onClick={() => navigate("/login")}>Solicitar demo</button>
+        <div className="contact-actions">
+          <a className="btn-primary" href={WHATSAPP_URL} target="_blank" rel="noreferrer">Cotizar por WhatsApp</a>
+          <button className="btn-ghost" onClick={() => navigate("/login")}>Ver demo</button>
+        </div>
       </section>
 
-      <a className="whatsapp-float" href="https://wa.me/524641234567?text=Hola,%20quiero%20cotizar%20el%20sistema%20industrial" target="_blank" rel="noreferrer">
+      <a className="whatsapp-float" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
         Cotizar sistema
       </a>
     </main>

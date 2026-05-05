@@ -371,6 +371,51 @@ svg {
   margin: 8px 0;
 }
 
+.contact-proof {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  display: grid;
+  gap: 4px;
+  margin-top: 18px;
+  max-width: 430px;
+  padding: 14px;
+}
+
+.contact-proof strong {
+  color: var(--text);
+  font-size: 1.32rem;
+}
+
+.contact-proof span {
+  color: var(--muted);
+}
+
+.contact-actions,
+.implementation-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-actions {
+  justify-content: flex-end;
+}
+
+.implementation-badges {
+  margin-top: 12px;
+}
+
+.implementation-badges span {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 999px;
+  color: #dbeafe;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 8px 10px;
+}
+
 .login-page {
   align-items: center;
   display: grid;

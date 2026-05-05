@@ -98,3 +98,9 @@ http://localhost:5173
 ## Objetivo comercial
 
 IndusVue esta pensado como base de un producto SaaS industrial: una herramienta que no solo muestra datos, sino que comunica valor de negocio, reduce riesgo operativo y ayuda a vender implementaciones de monitoreo industrial.
+
+## Contacto comercial
+
+```txt
++52 464 157 4591
+```

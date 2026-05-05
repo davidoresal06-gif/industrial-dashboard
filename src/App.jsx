@@ -11,6 +11,7 @@ import ProposalPage from "./pages/ProposalPage";
 import AdminPage from "./pages/AdminPage";
 import AboutPage from "./pages/AboutPage";
 import Sidebar from "./components/Sidebar";
+import { WHATSAPP_URL } from "./config/contact";
 import { canAccess, getDefaultPathForUser } from "./Data/IndustrialData";
 import "./styles/dashboard.css";
 
@@ -18,7 +19,7 @@ const MainLayout = ({ children, user, clientId, onClientChange }) => (
   <div className="app-container">
     <Sidebar user={user} clientId={clientId} onClientChange={onClientChange} />
     <main className="main-content">{children}</main>
-    <a className="whatsapp-float app-whatsapp" href="https://wa.me/524641234567?text=Hola,%20quiero%20cotizar%20el%20sistema%20industrial" target="_blank" rel="noreferrer">
+    <a className="whatsapp-float app-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
       Cotizar sistema
     </a>
   </div>

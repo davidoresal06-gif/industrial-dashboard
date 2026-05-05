@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChatBubbleLeftRightIcon, CircleStackIcon, ExclamationTriangleIcon, WifiIcon } from "@heroicons/react/24/outline";
+import { CONTACT_PHONE_DISPLAY } from "../config/contact";
 import { databaseOptions, getClientById, getClientSector } from "../Data/IndustrialData";
 
 export default function Support({ clientId }) {
@@ -57,7 +58,7 @@ export default function Support({ clientId }) {
             <form onSubmit={sendWhatsAppAlert} className="inline-form">
               <input
                 type="text"
-                placeholder="+524641234567"
+                placeholder={CONTACT_PHONE_DISPLAY}
                 value={phone}
                 onChange={(event) => setPhone(event.target.value)}
               />
