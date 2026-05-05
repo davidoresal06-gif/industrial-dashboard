@@ -1531,6 +1531,148 @@ nav a:hover {
   max-width: 1100px;
 }
 
+.motion-panel {
+  align-items: center;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.industrial-motion {
+  background:
+    radial-gradient(circle at center, rgba(56, 189, 248, 0.16), transparent 38%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 26px;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+
+.industrial-motion.compact {
+  height: 220px;
+}
+
+.industrial-motion::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.motion-radar {
+  aspect-ratio: 1;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 50%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 54%;
+}
+
+.motion-radar span,
+.motion-radar i,
+.motion-radar b {
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 50%;
+  inset: 18%;
+  position: absolute;
+}
+
+.motion-radar i {
+  inset: 34%;
+}
+
+.motion-radar b {
+  animation: radarSweep 3.8s linear infinite;
+  background: conic-gradient(from 0deg, rgba(56, 189, 248, 0.44), transparent 28%);
+  border: 0;
+  inset: 0;
+}
+
+.motion-pipeline {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+  inset: auto 24px 26px 24px;
+  position: absolute;
+}
+
+.motion-pipeline span {
+  animation: pipePulse 1.8s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+  border-radius: 999px;
+  height: 4px;
+}
+
+.motion-pipeline span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.motion-pipeline span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.motion-pipeline span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.motion-nodes span {
+  animation: nodePulse 2s ease-in-out infinite;
+  background: #f8fafc;
+  border-radius: 50%;
+  box-shadow: 0 0 26px rgba(56, 189, 248, 0.78);
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.motion-nodes span:nth-child(1) { left: 18%; top: 28%; }
+.motion-nodes span:nth-child(2) { right: 20%; top: 26%; animation-delay: .25s; }
+.motion-nodes span:nth-child(3) { left: 24%; bottom: 28%; animation-delay: .5s; }
+.motion-nodes span:nth-child(4) { right: 28%; bottom: 34%; animation-delay: .75s; }
+
+.motion-scan {
+  animation: scanLine 3.2s ease-in-out infinite;
+  background: linear-gradient(180deg, transparent, rgba(74, 222, 128, 0.22), transparent);
+  height: 30%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: -30%;
+}
+
+.sales-product .industrial-motion {
+  height: 210px;
+  margin-top: 22px;
+}
+
+.product-wave {
+  opacity: 0.85;
+}
+
+.panel,
+.kpi-card,
+.pricing-card,
+.sector-card {
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.panel:hover,
+.kpi-card:hover,
+.pricing-card:hover {
+  border-color: rgba(56, 189, 248, 0.24);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.44);
+  transform: translateY(-3px);
+}
+
 @keyframes riseIn {
   from {
     opacity: 0;
@@ -1540,6 +1682,41 @@ nav a:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes radarSweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pipePulse {
+  0%, 100% {
+    opacity: 0.28;
+    transform: scaleX(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.35);
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    top: -30%;
+  }
+  100% {
+    top: 100%;
   }
 }
 
@@ -1697,14 +1874,16 @@ nav a:hover {
 
 @media (max-width: 1100px) {
   .usecase-grid,
-  .status-strip {
+  .status-strip,
+  .motion-panel {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 680px) {
   .usecase-grid,
-  .status-strip {
+  .status-strip,
+  .motion-panel {
     grid-template-columns: 1fr;
   }
 

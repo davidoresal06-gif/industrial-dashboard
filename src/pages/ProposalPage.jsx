@@ -6,6 +6,7 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import { getClientById, getClientSector, getRecommendedPlan } from "../Data/IndustrialData";
+import { exportExecutiveReport } from "../utils/reportExport";
 
 const phases = [
   {
@@ -35,6 +36,16 @@ export default function ProposalPage({ clientId, user }) {
     month: "long",
     year: "numeric",
   });
+  const exportProposal = () => {
+    exportExecutiveReport({
+      client,
+      sector,
+      user,
+      telemetry: sector.chart,
+      alerts: sector.alerts,
+      title: `Propuesta ejecutiva IndusVue para ${client.name}`,
+    });
+  };
 
   return (
     <div className="page proposal-page">
@@ -44,7 +55,7 @@ export default function ProposalPage({ clientId, user }) {
           <h1>IndusVue para {client.name}</h1>
           <p>{client.site} | Preparado para {client.audience}</p>
         </div>
-        <button className="btn-primary" onClick={() => window.print()}>
+        <button className="btn-primary" onClick={exportProposal}>
           <ArrowDownTrayIcon />
           Generar PDF
         </button>

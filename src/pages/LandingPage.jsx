@@ -7,6 +7,7 @@ import {
   CpuChipIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
+import IndustrialMotion from "../components/IndustrialMotion";
 import { businessProof, pricingPlans, sectors, testimonials, useCaseCards } from "../Data/IndustrialData";
 
 const outcomes = [
@@ -67,6 +68,7 @@ export default function LandingPage({ isAuthenticated }) {
             <span className="live-pill">Actualizacion en vivo</span>
             <strong>Estado: Operativo</strong>
           </div>
+          <IndustrialMotion />
           <div className="product-wave">
             {sectors[0].chart.map((point) => (
               <span key={point.label} style={{ "--bar-height": `${point.production}%` }} />

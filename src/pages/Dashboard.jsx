@@ -21,7 +21,9 @@ import {
   ExclamationTriangleIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
+import IndustrialMotion from "../components/IndustrialMotion";
 import { getClientById, getClientSector, smartAlerts } from "../Data/IndustrialData";
+import { exportExecutiveReport } from "../utils/reportExport";
 
 function createLivePoint(sector) {
   const baseRisk = Number.parseInt(sector.aiPrediction.probability, 10);
@@ -92,22 +94,46 @@ export default function Dashboard({ clientId }) {
     ]);
   };
 
+  const exportReport = () => {
+    exportExecutiveReport({
+      client,
+      sector,
+      telemetry,
+      alerts: dashboardAlerts,
+      title: `Reporte operativo ${sector.name}`,
+    });
+  };
+
   return (
     <div className="page container">
       <header className="dashboard-header">
-  <div>
-    <span className="eyebrow">{client.name} | {client.site}</span>
-    <h1>{sector.name} Dashboard</h1>
-    <p>Monitorea rendimiento, consumo y alertas operativas del sector seleccionado.</p>
-  </div>
+        <div>
+          <span className="eyebrow">{client.name} | {client.site}</span>
+          <h1>{sector.name} Dashboard</h1>
+          <p>Monitorea rendimiento, consumo y alertas operativas del sector seleccionado.</p>
+        </div>
 
-  <div>
-    <button className="secondary-btn">Exportar reporte</button>
-    <button className="danger-btn" onClick={simulateFailure}>
-      Simular falla crítica
-    </button>
-  </div>
-</header>
+        <div className="header-actions">
+          <span className="clock-pill"><ClockIcon />{now.toLocaleTimeString("es-MX")}</span>
+          <button className="secondary-btn" onClick={exportReport}>
+            <ArrowDownTrayIcon />
+            Exportar reporte
+          </button>
+          <button className="danger-btn" onClick={simulateFailure}>
+            <BellAlertIcon />
+            Simular falla critica
+          </button>
+        </div>
+      </header>
+
+      <section className="motion-panel panel">
+        <div>
+          <span className="eyebrow">Nucleo industrial activo</span>
+          <h2>Datos OT, alertas IA y monitoreo ejecutivo en movimiento</h2>
+          <p>Animaciones sutiles muestran flujo de telemetria, escaneo de riesgo y conexion entre activos.</p>
+        </div>
+        <IndustrialMotion compact />
+      </section>
 
       <section className="kpi-grid">
         {sector.metrics.map((metric, index) => {
