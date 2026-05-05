@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChatBubbleLeftRightIcon, CircleStackIcon, ExclamationTriangleIcon, WifiIcon } from "@heroicons/react/24/outline";
-import { databaseOptions, getClientById, getClientSector } from "../data/industrialData";
+import { databaseOptions, getClientById, getClientSector } from "";
 
 export default function Support({ clientId }) {
   const client = getClientById(clientId);

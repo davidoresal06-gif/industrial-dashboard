@@ -10,7 +10,7 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
 import ClientSelector from "./ClientSelector";
-import { canAccess } from "../data/industrialData";
+import { canAccess } from "";
 
 export default function Sidebar({ user, clientId, onClientChange }) {
   const location = useLocation();

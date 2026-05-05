@@ -5,7 +5,7 @@ import {
   CurrencyDollarIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
-import { getClientById, getClientSector, getRecommendedPlan } from "../data/industrialData";
+import { getClientById, getClientSector, getRecommendedPlan } from "";
 
 const phases = [
   {

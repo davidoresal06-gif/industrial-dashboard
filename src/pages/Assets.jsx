@@ -1,5 +1,5 @@
 import { CubeIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline";
-import { getClientById, getClientSector } from "../data/industrialData";
+import { getClientById, getClientSector } from "";
 
 export default function Assets({ clientId }) {
   const client = getClientById(clientId);

@@ -5,7 +5,7 @@ import {
   ShieldCheckIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
-import { adminMetrics, clients, databaseOptions, users } from "../data/industrialData";
+import { adminMetrics, clients, databaseOptions, users } from "";
 
 export default function AdminPage() {
   return (

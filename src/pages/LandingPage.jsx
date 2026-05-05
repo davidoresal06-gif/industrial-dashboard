@@ -7,7 +7,7 @@ import {
   CpuChipIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
-import { businessProof, pricingPlans, sectors, testimonials } from "../data/industrialData";
+import { businessProof, pricingPlans, sectors, testimonials } from "";
 
 const outcomes = [
   "Detecta fallas antes del paro",

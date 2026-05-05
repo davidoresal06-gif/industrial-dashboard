@@ -1,4 +1,4 @@
-import { clients } from "../data/industrialData";
+import { clients } from "";
 
 export default function ClientSelector({ clientId, onClientChange }) {
   return (

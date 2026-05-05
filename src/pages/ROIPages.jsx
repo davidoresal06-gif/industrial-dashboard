@@ -1,6 +1,6 @@
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { ArrowTrendingUpIcon, BanknotesIcon, ChartPieIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
-import { addOns, getClientById, getClientSector, getRecommendedPlan, pricingPlans, sectors } from "../data/industrialData";
+import { addOns, getClientById, getClientSector, getRecommendedPlan, pricingPlans, sectors } from "";
 
 function savingsToNumber(value) {
   const clean = value.replace("$", "");
