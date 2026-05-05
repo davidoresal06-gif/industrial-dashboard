@@ -95,23 +95,19 @@ export default function Dashboard({ clientId }) {
   return (
     <div className="page container">
       <header className="dashboard-header">
-        <div>
-          <span className="eyebrow">{client.name} | {client.site}</span>
-          <h1>{sector.name}</h1>
-          <p>Monitorea rendimiento, consumo y alertas operativas del sector seleccionado.</p>
-        </div>
-        <div className="header-actions">
-          <span className="clock-pill"><ClockIcon />{now.toLocaleTimeString("es-MX")}</span>
-          <button className="btn-secondary" onClick={simulateFailure}>
-            <BellAlertIcon />
-            Simular falla
-          </button>
-          <button className="btn-secondary" onClick={() => window.print()}>
-            <ArrowDownTrayIcon />
-            Reporte gerencial
-          </button>
-        </div>
-      </header>
+  <div>
+    <span className="eyebrow">{client.name} | {client.site}</span>
+    <h1>{sector.name} Dashboard</h1>
+    <p>Monitorea rendimiento, consumo y alertas operativas del sector seleccionado.</p>
+  </div>
+
+  <div>
+    <button className="secondary-btn">Exportar reporte</button>
+    <button className="danger-btn" onClick={simulateFailure}>
+      Simular falla crítica
+    </button>
+  </div>
+</header>
 
       <section className="kpi-grid">
         {sector.metrics.map((metric, index) => {
