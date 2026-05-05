@@ -11,7 +11,7 @@ import ProposalPage from "./pages/ProposalPage";
 import AdminPage from "./pages/AdminPage";
 import Sidebar from "./components/Sidebar";
 import { canAccess, getDefaultPathForUser } from "./data/industrialData";
-import "./styles/Dashboard.css";
+import "./styles/dashboard.css";
 
 const MainLayout = ({ children, user, clientId, onClientChange }) => (
   <div className="app-container">
