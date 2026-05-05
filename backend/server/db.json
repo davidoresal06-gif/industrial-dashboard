@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "usr_admin",
+      "email": "admin@indusvue.com",
+      "password": "IndusVue2026!",
+      "name": "Elian David",
+      "role": "Director de operaciones"
+    },
+    {
+      "id": "usr_sales",
+      "email": "ventas@indusvue.com",
+      "password": "Demo2026!",
+      "name": "Equipo Comercial",
+      "role": "Consultor enterprise"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt_001",
+      "severity": "info",
+      "message": "Modelo predictivo actualizado con datos de vibracion",
+      "createdAt": "2026-05-04T09:00:00.000Z"
+    },
+    {
+      "id": "evt_002",
+      "severity": "warning",
+      "message": "Motor principal requiere inspeccion en 342 horas",
+      "createdAt": "2026-05-04T10:30:00.000Z"
+    }
+  ]
+}
