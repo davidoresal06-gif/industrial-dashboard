@@ -16,21 +16,33 @@ export default function LoginPage({ onLogin }) {
     return safeUser;
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setError("");
-    setLoading(true);
+ const handleSubmit = (event) => {
+  event.preventDefault();
+  setError("");
+  setLoading(true);
+
+  const localUser = validateLocalUser();
+
+  setTimeout(() => {
+    if (localUser) {
+      onLogin(localUser);
+    } else {
+      setError("Credenciales inválidas");
+    }
+    setLoading(false);
+  }, 600);
+};
 
     try {
-      const response = await fetch("http://localhost:4000/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      // const response = await fetch("http://localhost:4000/api/login", {
+//   method: "POST",
+//   headers: { "Content-Type": "application/json" },
+//   body: JSON.stringify({ email, password }),
+// });
 
-      if (!response.ok) throw new Error("Credenciales invalidas");
-      const session = await response.json();
-      onLogin(session.user);
+// if (!response.ok) throw new Error("Credenciales inválidas");
+// const session = await response.json();
+// onLogin(session.user);
     } catch {
       const localUser = validateLocalUser();
       if (localUser) {
@@ -130,4 +142,4 @@ export default function LoginPage({ onLogin }) {
       </section>
     </main>
   );
-}
+
